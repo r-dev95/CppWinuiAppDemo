@@ -1,0 +1,20 @@
+import "Models/NavItem.idl";
+
+namespace CppWinuiAppDemo.Services
+{
+    [default_interface]
+    runtimeclass NavigationService
+    {
+        NavigationService();
+
+        Microsoft.UI.Xaml.Controls.Frame Frame{ get; set; };
+        Windows.UI.Xaml.Interop.TypeName SettingsPageType{ get; set; };
+
+        void Register(CppWinuiAppDemo.Models.NavItem item);
+        void Navigate(String tag);
+        Boolean CanGoBack();
+        void GoBack();
+        Windows.Foundation.Collections.IObservableVector<CppWinuiAppDemo.Models.NavItem> GetNavItems();
+        CppWinuiAppDemo.Models.NavItem GetCurrentFrameType();
+    }
+}

@@ -1,0 +1,12 @@
+namespace CppWinuiAppDemo.Services
+{
+    [default_interface]
+    runtimeclass CommonService
+    {
+        CommonService();
+
+        String GetExeDirectory();
+        void OpenExplorerExeDirectory();
+        Windows.Foundation.DateTime GetCurrentLocalTime();
+    }
+}

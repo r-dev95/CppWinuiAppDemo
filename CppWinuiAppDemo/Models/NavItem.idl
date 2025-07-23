@@ -1,0 +1,11 @@
+namespace CppWinuiAppDemo.Models
+{
+    runtimeclass NavItem
+    {
+        NavItem(String name, String tag, Microsoft.UI.Xaml.Controls.Symbol icon, Windows.UI.Xaml.Interop.TypeName pageType);
+        String Name{ get; };
+        String Tag{ get; };
+        Microsoft.UI.Xaml.Controls.Symbol Icon{ get; };
+        Windows.UI.Xaml.Interop.TypeName PageType{ get; };
+    }
+}

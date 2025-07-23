@@ -1,0 +1,11 @@
+import "ViewModels/SettingsViewModel.idl";
+
+namespace CppWinuiAppDemo.Views
+{
+    [default_interface]
+    runtimeclass SettingsPage : Microsoft.UI.Xaml.Controls.Page
+    {
+        SettingsPage();
+        CppWinuiAppDemo.ViewModels.SettingsViewModel ViewModel{ get; };
+    }
+}

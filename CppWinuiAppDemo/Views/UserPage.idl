@@ -1,0 +1,9 @@
+namespace CppWinuiAppDemo.Views
+{
+    [default_interface]
+    runtimeclass UserPage : Microsoft.UI.Xaml.Controls.Page
+    {
+        UserPage();
+        Int32 MyProperty;
+    }
+}

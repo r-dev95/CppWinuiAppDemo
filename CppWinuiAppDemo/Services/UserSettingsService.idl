@@ -1,0 +1,13 @@
+import "Services/CommonService.idl";
+
+namespace CppWinuiAppDemo.Services
+{
+    [default_interface]
+    runtimeclass UserSettingsService
+    {
+        UserSettingsService(CppWinuiAppDemo.Services.CommonService commonService);
+
+        void Load();
+        void Save();
+    }
+}

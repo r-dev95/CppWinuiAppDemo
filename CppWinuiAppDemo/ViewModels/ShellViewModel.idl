@@ -1,0 +1,27 @@
+import "Models/NavItem.idl";
+import "Services/CommonService.idl";
+import "Services/UserSettingsService.idl";
+import "Services/NavigationService.idl";
+
+namespace CppWinuiAppDemo.ViewModels
+{
+    [default_interface]
+    runtimeclass ShellViewModel : Microsoft.UI.Xaml.Data.INotifyPropertyChanged
+    {
+        ShellViewModel(CppWinuiAppDemo.Services.CommonService commonService, CppWinuiAppDemo.Services.UserSettingsService userSettingsService, CppWinuiAppDemo.Services.NavigationService navService);
+
+        CppWinuiAppDemo.Services.NavigationService NavService{ get; };
+
+        Boolean IsDarkTheme{ get; set; };
+        String ClockText{ get; };
+        Windows.Foundation.Collections.IObservableVector<CppWinuiAppDemo.Models.NavItem> NavItems{ get; };
+        CppWinuiAppDemo.Models.NavItem SelectedNavItem{ get; };
+
+        void Startup();
+        void StopTimer();
+        void ItemInvoked(Microsoft.UI.Xaml.Controls.NavigationView _, Microsoft.UI.Xaml.Controls.NavigationViewItemInvokedEventArgs args);
+        void BackRequested(Microsoft.UI.Xaml.Controls.NavigationView sender, Microsoft.UI.Xaml.Controls.NavigationViewBackRequestedEventArgs _);
+        void ChangeThemeLoaded();
+        Microsoft.UI.Xaml.Input.ICommand ChangeThemeCommand{ get; };
+    }
+}

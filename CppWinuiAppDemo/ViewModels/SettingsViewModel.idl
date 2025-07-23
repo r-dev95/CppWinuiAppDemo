@@ -1,0 +1,18 @@
+import "Services/CommonService.idl";
+import "Services/UserSettingsService.idl";
+
+namespace CppWinuiAppDemo.ViewModels
+{
+    [default_interface]
+    runtimeclass SettingsViewModel : Microsoft.UI.Xaml.Data.INotifyPropertyChanged
+    {
+        SettingsViewModel(CppWinuiAppDemo.Services.CommonService commonService, CppWinuiAppDemo.Services.UserSettingsService userSettingsService);
+
+        String SelectedTimeFormat{ get; set; };
+        Microsoft.UI.Xaml.Controls.ComboBox TimeFormatComboBox{ get; set; };
+
+        void Startup();
+        Microsoft.UI.Xaml.Input.ICommand SaveSettingsCommand{ get; };
+        Microsoft.UI.Xaml.Input.ICommand OpenExplorerCommand{ get; };
+    }
+}
